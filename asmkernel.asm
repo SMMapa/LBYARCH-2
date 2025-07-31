@@ -40,5 +40,6 @@ L1:
     inc r10
     jmp L1
 
-ret
+.done:
+    ret
 
