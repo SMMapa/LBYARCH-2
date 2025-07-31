@@ -16,6 +16,8 @@ I wasn't able to test my asmkernel.asm
 I struggled to implement a C main program with initialization and correct call/passing parameters to x86-64.
 Wasn't able to check the time of execution.
 
+## COMPARISON
+
 Vector Size (n)	            C Kernel Time (ms)            	ASM Kernel Time (ms)
 
     2^20                          (ms)                             (ms)
