@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <math.h>
+#include "ckernel.h"
 
 int getVectorPower() {
     int n = 1;
