@@ -7,7 +7,8 @@ Sabine: My PC could not handle powers of 2 above 16. Average execution time was 
 Manaois: 
 
 I wasn't able to test my asmkernel.asm 
-I failed to create a C main program with initialization and correct call/passing parameters to C and x86-64
+I struggled to implement a C main program with initialization and correct call/passing parameters to x86-64.
+Wasn't able to check the time of execution.
 
 Vector Size (n)	            C Kernel Time (ms)            	ASM Kernel Time (ms)
 
