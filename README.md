@@ -26,7 +26,8 @@ Vector Size (n)	            C Kernel Time (ms)            	ASM Kernel Time (ms)
     
     2^30                          (ms)                             (ms)
 
-Expectations:
+
+## Expectations:
 
 C Kernel Time will have a longer time to execute compared to ASM Kernel Time.
 
