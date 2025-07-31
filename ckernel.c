@@ -8,27 +8,31 @@ int getVectorPower() {
     int n = 1;
     do {
         printf("Enter vector size (power of 2): ");
-        scanf("%d",n); //2^n
+        scanf("%d",&n); //2^n
     }while(n < 2);
     return n;
 }
 
-void fillVector(float vector[],int vecsize) {
-    float dummy_float = 5.1;
+void fillVector(int vecsize, float (*vector)[vecsize]) {
+    float dummy_float = 0.0;
     int count = 0;
     while(count < vecsize) {
-        vector[count] = dummy_float;
+        dummy_float = (float)rand()/(float)(RAND_MAX/11);
+        (*vector)[count] = dummy_float;
         count = count + 1;
     }
 }
 
-void populateZ(float Y_1[], float Y_2[],float X_1[],float X_2[], float Z[],int n) {
+void populateZ(int n, float (*Y_1)[n], float(*Y_2)[n],float (*X_1)[n],float (*X_2)[n], float (*Z)[n]) {
     int index = 0;
     while(index<n) {
-        float x = pow((X_2[index]-X_1[index]),2);
-        float y = pow((Y_2[index]-Y_1[index]),2);
+        float x = ((*X_2)[index] - (*X_1)[index]);
+        x=x*x;
+        float y = ((*Y_2)[index] - (*Y_1)[index]);
+        y=y*y;
+
         float z = sqrtf(x+y);
-        Z[index] = z;
+        (*Z)[index] = z;
         index = index + 1;
      }
 
@@ -44,14 +48,16 @@ void printFirstTen(float Z[]) {
 
 void createVectors() {
     int powerV = getVectorPower();
-    powerV = pow(2,powerV);
+    powerV = powerV*powerV;
+    printf("powerV: %d\n",powerV);
     float Y_1[powerV], Y_2[powerV];
     float X_1[powerV], X_2[powerV];
     float Z[powerV];
-    fillVector(Y_1,powerV);
-    fillVector(Y_2,powerV);
-    fillVector(X_1,powerV);
-    fillVector(X_2,powerV);
-    populateZ(Y_1,Y_2,X_1,X_2,Z,powerV);
+    fillVector(powerV,&Y_1);
+    printf("test val: %f\n",Y_1[0]);
+    fillVector(powerV,&Y_2);
+    fillVector(powerV,&X_1);
+    fillVector(powerV,&X_2);
+    populateZ(powerV,&Y_1,&Y_2,&X_1,&X_2,&Z);
     printFirstTen(Z);
 }

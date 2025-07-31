@@ -10,12 +10,12 @@ int getVectorPower();
 
 #ifndef FILL_VECTOR
 #define FILL_VECTOR
-void fillVector(float vector[],int vecsize);
+void fillVector(int vecsize, float (*vector)[vecsize]);
 #endif
 
 #ifndef POPULATE_Z
 #define POPULATE_Z
-void populateZ(float Y_1[], float Y_2[],float X_1[],float X_2[], float Z[],int n);
+void populateZ(int n, float (*Y_1)[n], float(*Y_2)[n],float (*X_1)[n],float (*X_2)[n], float (*Z)[n]);
 #endif
 
 #ifndef PRINT_FIRST_TEN
