@@ -11,11 +11,11 @@ I failed to create a C main program with initialization and correct call/passing
 
 Vector Size (n)	            C Kernel Time (ms)            	ASM Kernel Time (ms)
 
-    2^20
+    2^20                          (ms)                             (ms)
     
-    2^24
+    2^24                          (ms)                             (ms)
     
-    2^30
+    2^30                          (ms)                             (ms)
 
 Expectations:
 
