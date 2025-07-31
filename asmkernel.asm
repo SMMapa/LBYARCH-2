@@ -7,9 +7,9 @@
 section .text
 bits 64
 default rel
-global calculate_distances_asm 
+global asmkernel 
 
-calculate_distances_asm:                            
+asmkernel:                            
     xor r10, r10 ; xor function is to initialize it to 0 with style
 
 L1: 
